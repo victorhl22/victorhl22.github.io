@@ -1,0 +1,119 @@
+---
+const stackActual = [
+"HTML5",
+  "CSS3",
+  "JavaScript",
+  "TypeScript",
+  "Node.js",
+  "Express",
+  "Python",
+  "MongoDB",
+  "Git & GitHub",
+  "SQL / MySQL",
+  "PostgreSQL",
+  "APIs REST",
+  "Linux / Terminal",
+  "Wordpress",
+  "PHP",
+];
+
+const aprendiendo = [
+  "Astro",
+  "React",
+  "Angular",
+  "Docker",
+  "Tailwind CSS",
+  "Bootstrap",
+  "Next.js",
+];
+---
+
+<section id="sobre-mi" class="about-section">
+  <div class="about-container">
+    <h2>Sobre mí</h2>
+    <p class="bio">
+      Soy Víctor, estudiante y desarrollador enfocado en crear aplicaciones y sitios web rápidos,
+      limpios y bien estructurados. Me interesa especialmente el desarrollo web moderno y seguir
+      construyendo proyectos reales desde cero.
+    </p>
+
+    <div class="stack-grid">
+      <div class="stack-block">
+        <h3>Herramientas que domino</h3>
+        <ul class="tags">
+          {stackActual.map((tech) => (
+            <li class="tag">{tech}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="stack-block">
+        <h3>Aprendiendo actualmente</h3>
+        <ul class="tags">
+          {aprendiendo.map((tech) => (
+            <li class="tag tag-learning">{tech}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .bio {
+    line-height: 1.7;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .stack-block {
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+  }
+
+  .stack-block h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tag {
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+  }
+
+  .tag-learning {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: rgba(16, 185, 129, 0.35);
+  }
+</style>
