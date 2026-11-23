@@ -1,0 +1,39 @@
+---
+interface Props {
+	titulo: string;
+	descripcion: string;
+	tecnologias: string[];
+	enlaceGithub: string;
+	enlaceDemo?: string;
+}
+
+const { titulo, descripcion, tecnologias, enlaceGithub, enlaceDemo } = Astro.props;
+---
+
+<article class="bg-slate-900/60 border border-slate-800 rounded-xl p-6 hover:border-sky-500/50 transition-all flex flex-col justify-between">
+	<div>
+		<h3 class="text-xl font-semibold text-white mb-2">{titulo}</h3>
+		<p class="text-slate-400 text-sm leading-relaxed mb-4">{descripcion}</p>
+	</div>
+
+	<div>
+		<div class="flex flex-wrap gap-2 mb-5">
+			{tecnologias.map((tech) => (
+				<span class="text-xs font-medium px-2.5 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
+					{tech}
+				</span>
+			))}
+		</div>
+
+		<div class="flex gap-4 text-sm font-medium">
+			<a href={enlaceGithub} target="_blank" class="text-slate-300 hover:text-sky-400 transition-colors">
+				Código en GitHub →
+			</a>
+			{enlaceDemo && (
+				<a href={enlaceDemo} target="_blank" class="text-sky-400 hover:text-sky-300 transition-colors">
+					Ver web en vivo →
+				</a>
+			)}
+		</div>
+	</div>
+</article>
